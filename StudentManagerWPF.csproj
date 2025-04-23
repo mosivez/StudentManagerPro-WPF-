@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C1FA5753-CE32-48ED-ADD1-7509DB28D41A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StudentManagerWPF</RootNamespace>
+    <AssemblyName>StudentManagerWPF</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\Ico\UserLogin.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MyVideo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MyVideo.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Common\DataGridViewStyle.cs" />
+    <Compile Include="Common\DataValidate.cs" />
+    <Compile Include="Common\SerializeObjectToString.cs" />
+    <Compile Include="Common\StringSecurity.cs" />
+    <Compile Include="Views\AddStuPage.xaml.cs">
+      <DependentUpon>AddStuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AttendancePage.xaml.cs">
+      <DependentUpon>AttendancePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AttendanceQueryPage.xaml.cs">
+      <DependentUpon>AttendanceQueryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditStudentWindow.xaml.cs">
+      <DependentUpon>EditStudentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserLoginWindow.xaml.cs">
+      <DependentUpon>UserLoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ImportDataPage.xaml.cs">
+      <DependentUpon>ImportDataPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ModifyPwdWindow.xaml.cs">
+      <DependentUpon>ModifyPwdWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ScoreManagePage.xaml.cs">
+      <DependentUpon>ScoreManagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ScoreQueryPage.xaml.cs">
+      <DependentUpon>ScoreQueryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StudentInfoWindow.xaml.cs">
+      <DependentUpon>StudentInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StuManagePage.xaml.cs">
+      <DependentUpon>StuManagePage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Common\DataGridCss.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\AddStuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AttendancePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AttendanceQueryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditStudentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserLoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ImportDataPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ModifyPwdWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ScoreManagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ScoreQueryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StudentInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StuManagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ico\about.ico" />
+    <Resource Include="Images\Ico\DeliveryOrder.ICO" />
+    <Resource Include="Images\Ico\MainFormLog.ICO" />
+    <Resource Include="Images\Ico\Purchase.ico" />
+    <Resource Include="Images\Ico\Query.ico" />
+    <Resource Include="Images\Ico\student.ico" />
+    <Resource Include="Images\Ico\UserLogin.ico" />
+    <Resource Include="Images\Ico\UserPsw.ico" />
+    <Resource Include="Images\Ico\关闭.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{99fded9e-5611-4b31-9c5c-ec11c6946438}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{c58270ab-3c17-4b62-bf4e-537ade88f9d3}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\default.png" />
+    <Resource Include="Images\mainbg.png" />
+    <Resource Include="Images\mainbg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ico\lklLogin.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ico\CustomerOrder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ico\查询选择.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ico\bMan..ico" />
+    <Resource Include="Images\Ico\Cancel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ico\MngIncdown.bmp" />
+    <Resource Include="Images\Ico\people.ico" />
+    <Resource Include="Images\Ico\PROPS.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ico\App.ico" />
+    <Resource Include="Images\Ico\DataBase.ico" />
+    <Resource Include="Images\Ico\SysIco.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Pages\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ico\4.png" />
+    <Resource Include="Images\Ico\lklLoginExit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ico\5.jpg" />
+    <Resource Include="Images\Ico\exit.ico" />
+    <Resource Include="Images\Ico\turn.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Pages\2学员管理.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ico\MngDowndown.bmp" />
+    <Resource Include="Images\Ico\MngUpover.bmp" />
+    <Resource Include="Images\Ico\Print.ico" />
+    <Resource Include="Images\Ico\修改.bmp" />
+    <Resource Include="Images\Ico\删除.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Pages\3当前学员详细信息.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Pages\3修改学员信息.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Pages\3考勤打卡.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Pages\4考勤查询.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Pages\10批量导入.jpg" />
+    <Resource Include="Images\Pages\6成绩分析.jpg" />
+    <Resource Include="Images\Pages\7密码修改.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Pages\5成绩浏览.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\default.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

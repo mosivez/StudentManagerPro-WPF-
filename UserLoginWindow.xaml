@@ -1,0 +1,43 @@
+﻿<Window x:Class="StudentManagerWPF.UserLoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="学员信息管理系统-【用户登录】" WindowStartupLocation="CenterScreen" Height="240" Width="600" Background="#FFD4D4D4" Icon="/StudentManagerWPF;component/Images/Ico/UserLogin.ico" >
+    <Grid>
+        <!--<Grid.Background>
+            <ImageBrush ImageSource="Iamges/1.jpg"/>
+        </Grid.Background>-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="139*"/>
+            <ColumnDefinition Width="157*"/>
+        </Grid.ColumnDefinitions>
+        <Image Margin="20" Source="/Images/Login.jpg" Stretch="Fill"></Image>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="46*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="21*"/>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="32*"/>
+                <RowDefinition Height="31*"/>
+                <RowDefinition Height="20*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="1" Text="登录账号：" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0"></TextBlock>
+            <TextBox Name="txtLoginId" Text="1001" Grid.Row="1" Background="White" HorizontalAlignment="Right" VerticalAlignment="Center" Width="130" Margin="0,0,80,0" KeyDown="txtLoginId_KeyDown"></TextBox>
+            <TextBlock Grid.Row="3" Text="登录密码：" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0" KeyDown="pswLoginPwd_KeyDown"></TextBlock>
+            <PasswordBox Name="txtLoginPwd" Password="123456" Grid.Row="3" Background="White" HorizontalAlignment="Right" VerticalAlignment="Center" Height="22" Width="130" Margin="0,0,80,0"></PasswordBox>
+            <Button Name="btnLogin" FontSize="16" Grid.Row="5" Margin="64,2,180,3" Click="btnLogin_Click">
+                <DockPanel>
+                    <Image Source="/Images/Ico/lklLogin.ICO" Margin="0,2,4,0"></Image>
+                    <TextBlock>登 陆</TextBlock>
+                </DockPanel>
+            </Button>
+            <Button Name="btnClose" FontSize="16" Grid.Row="5" Margin="164,2,80,3" Click="btnClose_Click">
+                <DockPanel>
+                    <Image Source="/Images/Ico/关闭.bmp" Margin="0,2,4,0"></Image>
+                    <TextBlock>退 出</TextBlock>
+                </DockPanel>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
+
