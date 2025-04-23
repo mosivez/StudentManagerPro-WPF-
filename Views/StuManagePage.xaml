@@ -1,0 +1,134 @@
+﻿<UserControl x:Class="StudentManagerWPF.Views.StuManagePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Name="userStuManage"
+             d:DesignHeight="671" d:DesignWidth="1006">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary  Source="/Common/DataGridCss.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <!--<Style x:Key="contentCenterStyle" TargetType="{x:Type TextBlock}">
+                <Setter Property="VerticalAlignment" Value="Center" />
+                
+            </Style>-->
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Background="#FFF0F0F0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="62*"/>
+            <RowDefinition Height="72*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="62*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="438*"/>
+            <RowDefinition Height="13*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="22*"/>
+            <ColumnDefinition Width="959*"/>
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="1" Text="学员信息管理" VerticalAlignment="Center" FontSize="23" Foreground="Purple"></TextBlock>
+        <GroupBox Header="[按照班级查询]" Grid.Column="1" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="62*"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="116*"/>
+                    <ColumnDefinition Width="18*"/>
+                    <ColumnDefinition Width="80*"/>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="80*"/>
+                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition Width="80*"/>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="72*"/>
+                    <ColumnDefinition Width="7*"/>
+                    <ColumnDefinition Width="72*"/>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="105*"/>
+                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition Width="132*"/>
+                    <ColumnDefinition Width="14*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="学员班级：" FontSize="12" VerticalAlignment="Center"></TextBlock>
+                <ComboBox Grid.Column="3" Name="cboClass" VerticalAlignment="Center" Background="#FFCCE8CF"></ComboBox>
+                <Button Name="btnQuery" Grid.Column="5" VerticalAlignment="Center" Height="32" Click="btnQuery_Click">
+                    <DockPanel Width="78">
+                        <Image Margin="3,5" Source="/Images/Ico/Query.ico" />
+                        <TextBlock VerticalAlignment="Center">提交查询</TextBlock>
+                    </DockPanel>
+                </Button>
+                <Button Name="btnNameDESC" Grid.Column="7" VerticalAlignment="Center" Height="32" Click="btnNameDESC_Click">
+                    <DockPanel Width="78">
+                        <Image Margin="3,5" Source="/Images/Ico/MngDowndown.bmp" />
+                        <TextBlock VerticalAlignment="Center">姓名降序</TextBlock>
+                    </DockPanel>
+                </Button>
+                <Button Name="btnStuIdDESC" Grid.Column="9" VerticalAlignment="Center" Height="32" Click="btnStuIdDESC_Click">
+                    <DockPanel Width="78">
+                        <Image Margin="3,5" Source="/Images/Ico/MngDowndown.bmp" />
+                        <TextBlock VerticalAlignment="Center">学号降序</TextBlock>
+                    </DockPanel>
+                </Button>
+                <Button Name="btnEidt" Grid.Column="11" VerticalAlignment="Center" Height="32" Click="btnEidt_Click">
+                    <DockPanel Width="62">
+                        <Image Margin="3,5" Source="/Images/Ico/修改.bmp" />
+                        <TextBlock VerticalAlignment="Center">修 改</TextBlock>
+                    </DockPanel>
+                </Button>
+                <Button Name="btnDel" Grid.Column="13" VerticalAlignment="Center" Height="32" Click="btnDel_Click">
+                    <DockPanel Width="62">
+                        <Image Margin="3,5" Source="/Images/Ico/删除.bmp" />
+                        <TextBlock VerticalAlignment="Center" Foreground="#FFB4242E">删 除</TextBlock>
+                    </DockPanel>
+                </Button>
+                <Button Name="btnExport" Grid.Column="15" VerticalAlignment="Center" Height="32">
+                    <DockPanel Width="95">
+                        <Image Margin="3,5" Source="/Images/Ico/CustomerOrder.ico" />
+                        <TextBlock VerticalAlignment="Center">导出到Excel</TextBlock>
+                    </DockPanel>
+                </Button>
+                <Button Name="btnPrint" Grid.Column="17" VerticalAlignment="Center" Height="32" Click="btnPrint_Click">
+                    <DockPanel Width="122">
+                        <Image Margin="3,5" Source="/Images/Ico/Query.ico" />
+                        <TextBlock VerticalAlignment="Center">打印当前学员信息</TextBlock>
+                    </DockPanel>
+                </Button>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="[按学号精确查询]" Grid.Column="1" Grid.Row="3" Margin="0,0,630,0">
+            <Grid>
+                <TextBlock Text="输入学号：" VerticalAlignment="Center" FontSize="12" Margin="5,0,251,0"></TextBlock>
+                <TextBox Name="txtStudentId" Margin="78,0,123,0"  VerticalAlignment="Center" FontSize="12" Background="White" BorderBrush="#FF6D6D6D" KeyDown="txtStudentId_KeyDown"/>
+                <Button Name="btnQueryById"  Content="提交查询" Margin="212,0,25,0" VerticalAlignment="Center" FontSize="12" Height="30" Click="btnQueryById_Click"></Button>
+            </Grid>
+        </GroupBox>
+        <Button Name="btnClose" VerticalAlignment="Center" Margin="860,22,21,10" Grid.Column="1" Grid.Row="3" FontSize="12" Height="30" Click="btnClose_Click">
+            <DockPanel Width="78">
+                <Image Margin="3,5" Source="/Images/Ico/关闭.bmp" />
+                <TextBlock VerticalAlignment="Center">关闭窗口</TextBlock>
+            </DockPanel>
+        </Button>
+        <Grid Grid.Column="1" Grid.Row="5">
+            <DataGrid x:Name="dgvStudentList" RowHeaderWidth="0" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" IsReadOnly="True"
+                      ScrollViewer.PanningMode="VerticalOnly" Foreground="Blue" RowBackground="#FFFFFFC0" AlternatingRowBackground="#FF80FFFF"  
+                      AutoGenerateColumns="False" BorderBrush="Black" VerticalContentAlignment="Center" MouseDoubleClick="dgvStudentList_MouseDoubleClick">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="学号" Width="120" Binding="{Binding StudentId}"/>
+                    <DataGridTextColumn Header="姓名" Width="100" Binding="{Binding StudentName}"/>
+                    <DataGridTextColumn Width="80" Header="性别" Binding="{Binding Gender}"/>
+                    <DataGridTextColumn Header="身份证号" Width="180" Binding="{Binding StudentIdNo}"/>
+                    <DataGridTextColumn Header="出生日期" Width="160" Binding="{Binding Birthday,StringFormat='{}{0:yyyy-MM-dd}'}"/>
+                    <DataGridTextColumn Header="手机号码" Width="160" Binding="{Binding PhoneNumber}"/>
+                    <DataGridTextColumn Header="所在班级" Width="165" Binding="{Binding ClassName}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</UserControl>
